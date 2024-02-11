@@ -4,9 +4,11 @@ on:
   push:
     branches:
     - 'master'
+    - 'tap-summary'
   pull_request:
     branches:
     - 'master'
+    - 'tap-summary'
   workflow_dispatch:
 
 permissions:
