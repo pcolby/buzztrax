@@ -52,9 +52,9 @@ jobs:
 
     - uses: pcolby/tap-summary@v1.1
       if: always()
-      #with:
-      #  path: |
-      #    /tmp/*.tap
+      with:
+        path: |
+          /tmp/*.tap
       #  summary-file: tap_summary.md
 
     - uses: actions/upload-artifact@v4
