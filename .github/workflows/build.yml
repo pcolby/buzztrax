@@ -56,12 +56,12 @@ jobs:
         paths: /tmp/*.tap
         output: test_summary.md
 
-    # https://github.com/pcolby/tap-summary/issues
-    #- uses: pcolby/tap-summary@v1
-    #  if: always()
-    #  with:
-    #    path: /tmp/*.tap
-    #    summary-file: test_summary.md
+     https://github.com/pcolby/tap-summary/issues
+    - uses: pcolby/tap-summary@v1.1
+      if: always()
+      with:
+        path: /tmp/*.tap
+        summary-file: test_summary.md
 
     - uses: actions/upload-artifact@v4
       if: always() && steps.check.outcome == 'failure' && steps.rerun_tests.outcome == 'success'
