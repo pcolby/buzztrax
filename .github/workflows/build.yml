@@ -48,7 +48,7 @@ jobs:
         cat ./bt_edit.log ./test-suite.log
         scripts/gdbtests.sh ./test-suite.log
 
-    - uses: pcolby/tap-summary@v1
+    - uses: pcolby/tap-summary@v1.1
       if: always()
       with:
         path: |
