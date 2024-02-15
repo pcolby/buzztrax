@@ -58,7 +58,7 @@ jobs:
           /tmp/*.tap
       #  summary-file: tap_summary.md
 
-   - run: |
+    - run: |
         echo "TAP_SUMMARY_FILE: ${TAP_SUMMARY_FILE}"
         cat "${TAP_SUMMARY_FILE}"
       env:
