@@ -58,10 +58,17 @@ jobs:
 
     # https://github.com/pcolby/tap-summary/issues
     - uses: pcolby/tap-summary@v1.1
+      id: tap-summary
       if: always()
       with:
         path: /tmp/*.tap
         summary-file: test_summary.md
+
+    - run: |
+        echo "TAP_SUMMARY_FILE: ${TAP_SUMMARY_FILE}"
+        cat "${TAP_SUMMARY_FILE}"
+      env:
+        TAP_SUMMARY_FILE: ${{ steps.tap-summary.outputs.summary-file }}
 
     - uses: actions/upload-artifact@v4
       if: always() && steps.check.outcome == 'failure' && steps.rerun_tests.outcome == 'success'
